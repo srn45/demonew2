@@ -1,0 +1,15 @@
+.example-card {
+    max-width: 400px;
+   
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .example-header {
+   
+    
+    
+    margin-left: 100px;
+    letter-spacing: 10px;
+   
+  }

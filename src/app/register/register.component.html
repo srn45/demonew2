@@ -1,0 +1,36 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <mat-card-title class="example-header">Register</mat-card-title><br>
+
+    </mat-card-header>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+        <label for="first-name" class="form-lable">First Name: </label>
+        <input id="first-name" type="text" formControlName="firstname" class="form-control form-control-lg">
+        <span *ngIf="firstname && firstname.invalid && firstname.touched" class="text-danger">Enter valid
+            name</span><br>
+
+        <label for="last-name" class="form-lable">Last Name: </label>
+        <input id="last-name" type="text" formControlName="lastname" class="form-control form-control-lg">
+        <span *ngIf="lastname && lastname.invalid && lastname.touched" class="text-danger">Enter valid name</span><br>
+        <div formGroupName="address">
+            <h2>Address</h2>
+
+            <label for="street" class="form-lable">Street: </label>
+            <input id="street" type="text" formControlName="street" class="form-control form-control-lg">
+
+            <label for="city" class="form-lable">City: </label>
+            <input id="city" type="text" formControlName="city" class="form-control form-control-lg">
+
+            <label for="state" class="form-lable">State: </label>
+            <input id="state" type="text" formControlName="state" class="form-control form-control-lg">
+
+            <label for="zip" class="form-lable">Zip Code: </label>
+            <input id="zip" type="text" formControlName="zip" class="form-control form-control-lg">
+        </div>
+        <p>Complete the form to enable button.</p>
+        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    </form>
+
+</mat-card>

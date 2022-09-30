@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+         <div>
+             <label class="form-label">Select Category</label>
+             <div>
+                 <select class="form-select">
+                     <option *ngFor="let item of categories">
+                       {{item | titlecase}}
+                     </option>
+                 </select>
+             </div>
+         </div>
+      </div>
+      <div class="col-9">
+         <div class="d-flex flex-wrap" style="height: 400px;">
+            <div *ngFor="let item of products" class="card m-2 p2" style="width: 200px;">
+               <img [src]="item.image" height="150" class="card-img-top">
+               <div class="card-header">
+                   <p>{{item.title}}</p>
+               </div>
+               <div class="card-footer">
+                   <p>Price: &#8377; {{item.price}}</p>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+   </div>
